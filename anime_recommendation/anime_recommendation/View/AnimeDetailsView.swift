@@ -62,11 +62,7 @@ class AnimeDetailsView: UIViewController {
     private lazy var linkButton: UIButton = {
         let button = UIButton()
         button.tintColor = bkColor
-//        button.setTitle("Check this out", for: .normal)
-//        button.titleLabel!.font = UIFont.systemFont(ofSize: 20)
-//        button.titleLabel?.textColor = bkColor
         button.setImage(UIImage(systemName: "link"), for: .normal)
-//        button.titleLabel?.textAlignment = .left
         button.addTarget(self, action: #selector(linkButtonTapped), for: .touchUpInside)
         return button
     }()
