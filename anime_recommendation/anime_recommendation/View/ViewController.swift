@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     var AnimeListArray = [AnimeProperties]()
     var loadingStatus = false
-    
+
     private lazy var topBanner: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110))
         view.backgroundColor = blColor
@@ -97,9 +97,9 @@ class ViewController: UIViewController {
         tb.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tb.topAnchor.constraint(equalTo: self.topBanner.bottomAnchor),
+            tb.bottomAnchor.constraint(equalTo: self.bottomBanner.topAnchor),
             tb.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tb.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            tb.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height - 140)
         ])
     }
 
@@ -145,7 +145,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         spinner.startAnimating()
         spinner.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
-            spinner.bottomAnchor.constraint(equalTo: view.topAnchor),
+            spinner.bottomAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             spinner.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             spinner.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             spinner.heightAnchor.constraint(equalToConstant: 40)
@@ -158,7 +158,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let position = scrollView.contentOffset.y
         
         var index = AnimeListArray.count / 50
-        if position > (self.tb.contentSize.height - CGFloat(BATCH_CAPACITY) - scrollView.frame.size.height) {
+        if position > (self.tb.contentSize.height - CGFloat(10) - scrollView.frame.size.height) {
             print("DEBUG: Fetch More Data \(#function) \(#line)")
             self.tb.tableFooterView = createSpinnerFooter()
 
