@@ -10,10 +10,10 @@ Create an iOS app that displays a list of anime based on its popularity
 
 ## Results ##
 System Settings:
-1. Simulated using iPhone 11 Pro, running iOS 14.5
+1. Simulated using iPhone 11 Pro, running iOS 14.7
 2. Programs are generated using Xcode 12.5
 3. Orientation supported: portrait only
 
 <table>
-  <tr> <img src="./assets/anime_recommendation_simulation.GIF" height="600"> </tr>
+  <tr> <img src="./assets/anime_recommendation_system_iPhone_11_Pro.gif" height="600"> </tr>
 </table>
