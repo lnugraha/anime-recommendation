@@ -1,3 +1,7 @@
+# API Sources #
+1. https://ghibliapi.herokuapp.com
+2. https://api.jikan.moe/v3/top/anime/
+
 # Anime Recommendation System App
 Create an iOS app that displays a list of anime based on its popularity 
 
@@ -17,3 +21,5 @@ System Settings:
 <table>
   <tr> <img src="./assets/anime_recommendation_system_iPhone_11_Pro.gif" height="600"> </tr>
 </table>
+
+# Ghibli Studio Anime Lists # 
