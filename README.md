@@ -1,7 +1,7 @@
 # Learning How to Send and Process API Request for Mobile App Development #
 Create a mobile app (iOS and Android) that displays a list of anime based on its popularity
 
-## API Sources ##
+## List of Available API End Points ##
 1. List of anime produced by Studio Ghibli: https://ghibliapi.herokuapp.com
 2. List of anime based on their popularity: https://api.jikan.moe/v3/top/anime/
 3. List of anime quotes: https://animechan.vercel.app/api/quotes
@@ -16,13 +16,15 @@ Create a mobile app (iOS and Android) that displays a list of anime based on its
 ## Programming Languages ##
 1. For iOS, there are two implementations: using UIKit and using SwiftUI (to design the layout), the programming language for both versions remain Swift
 2. For Android, using Kotlin (Java implementation may happen if time permits)
+3. To improve speed and efficiency, both version use RAM caching to reduce latency due to sending unnecessary API requests and infinite scrolling to ensure a smooth user experience
 
 ## Results ##
-System Settings:
+### System Settings: (This section will be removed soon) ###
 1. Simulated using iPhone 11 Pro, running iOS 14.7
 2. Programs are generated using Xcode 12.5
 3. Orientation supported: portrait only
 
+### (This result will be removed soon) ###
 <table>
   <tr> <img src="./assets/anime_recommendation_system_iPhone_11_Pro.gif" height="600"> </tr>
 </table>
