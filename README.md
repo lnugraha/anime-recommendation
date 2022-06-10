@@ -1,4 +1,4 @@
-# Learning How to Send and Process API Request for Mobile App Development #
+# Sending and Processing API Requests for Mobile App Development #
 Create a mobile app (iOS and Android) that displays a list of anime based on its popularity
 
 ## List of Available API End Points ##
