@@ -11,8 +11,31 @@ final class QuotesViewModel: NSObject {
 
     @Published public var quoteList: Array<QuotesModel> = [QuotesModel]()
 
-    public func sendApiRequest() {
-        let urlString = URL(string: API_ENDPOINT_URL)
+    public func sendApiRequest(completionHandler: @escaping((Result<QuotesModel, Error>)->(Void))) {
+        let url = URL(string: API_ENDPOINT_URL)
+        var urlRequest: URLRequest = URLRequest(url: url!)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept-Encoding")
+
+        // let semaphore = DispatchSemaphore(value: 0)
+        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, _ in
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let jsonData = data else {
+                // completionHandler(.failure(.responseProblem))
+                return
+            }
+
+            do {
+                let messageData = try JSONDecoder().decode(QuotesModel.self, from: jsonData)
+                completionHandler(.success(messageData))
+            } catch {
+                // completionHandler(.failure(.decodingProblem))
+            }
+
+            // semaphore.signal()
+        }
+        dataTask.resume()
+        // semaphore.wait()
 
     }
     
