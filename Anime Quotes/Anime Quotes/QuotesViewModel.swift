@@ -12,7 +12,8 @@ final class QuotesViewModel: NSObject {
     @Published public var quoteList: Array<QuotesModel> = [QuotesModel]()
 
     public func sendApiRequest() {
-        
+        let urlString = URL(string: API_ENDPOINT_URL)
+
     }
     
 }
